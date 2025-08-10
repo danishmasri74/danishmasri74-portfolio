@@ -222,45 +222,38 @@ export default function Page() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-4xl mx-auto">
               {stacks.map((stack) => (
-                <motion.div
-                  key={stack.title}
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ type: "spring", stiffness: 200 }}
-                  className="relative rounded-lg"
-                >
-                  {/* Glowing border */}
-                  <GlowingEffect
-                    glow
-                    blur={8}
-                    spread={30}
-                    proximity={60}
-                    movementDuration={1.5}
-                    borderWidth={1}
-                    disabled={false} // set to false so glow works
-                    className="rounded-lg"
-                  />
-
-                  {/* Card content */}
-                  <div className="relative bg-card/60 backdrop-blur-md rounded-lg p-4 sm:p-5 shadow-sm border border-border hover:shadow-lg transition-all duration-200">
-                    <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
-                      {stack.title}
-                    </h3>
-                    <ul className="flex flex-wrap gap-2">
-                      {stack.items.map((item) => {
-                        const Icon = iconMap[item];
-                        return (
-                          <li
-                            key={item}
-                            className="flex items-center gap-2 px-3 py-1 text-xs sm:text-sm bg-muted rounded-full hover:bg-muted/80 transition-colors"
-                          >
-                            {Icon && <Icon size={16} />}
-                            {item}
-                          </li>
-                        );
-                      })}
-                    </ul>
+                <li key={stack.title} className="list-none">
+                  <div className="relative h-full rounded-2xl border p-2 sm:rounded-3xl sm:p-3 overflow-visible">
+                    <GlowingEffect
+                      blur={0}
+                      borderWidth={3}
+                      spread={80}
+                      glow
+                      disabled={false}
+                      proximity={64}
+                      inactiveZone={0.01}
+                    />
+                    <div className="relative flex flex-col gap-4 overflow-hidden rounded-xl p-4 sm:p-5 bg-card/60 backdrop-blur-md border border-border shadow-sm hover:shadow-lg transition-all duration-200">
+                      <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
+                        {stack.title}
+                      </h3>
+                      <ul className="flex flex-wrap gap-2">
+                        {stack.items.map((item) => {
+                          const Icon = iconMap[item];
+                          return (
+                            <li
+                              key={item}
+                              className="flex items-center gap-2 px-3 py-1 text-xs sm:text-sm bg-muted rounded-full hover:bg-muted/80 transition-colors"
+                            >
+                              {Icon && <Icon size={16} />}
+                              {item}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
                   </div>
-                </motion.div>
+                </li>
               ))}
             </div>
           </section>
