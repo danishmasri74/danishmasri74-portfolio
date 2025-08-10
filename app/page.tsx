@@ -31,6 +31,7 @@ import {
   FaJs,
   FaCuttlefish,
 } from "react-icons/fa";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 // PROJECTS
 const projects = [
@@ -94,7 +95,7 @@ const iconMap: Record<string, React.ElementType> = {
   "VS Code": VscVscode,
   "Visual Studio 2022": VscVscode,
   "Sublime Text": SiVscodium,
-  "Blender": BiLogoBlender,
+  Blender: BiLogoBlender,
 };
 
 // STACKS
@@ -225,25 +226,40 @@ export default function Page() {
                   key={stack.title}
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 200 }}
-                  className="bg-card/60 backdrop-blur-md rounded-lg p-4 sm:p-5 shadow-sm border border-border hover:shadow-lg transition-all duration-200"
+                  className="relative rounded-lg"
                 >
-                  <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
-                    {stack.title}
-                  </h3>
-                  <ul className="flex flex-wrap gap-2">
-                    {stack.items.map((item) => {
-                      const Icon = iconMap[item];
-                      return (
-                        <li
-                          key={item}
-                          className="flex items-center gap-2 px-3 py-1 text-xs sm:text-sm bg-muted rounded-full hover:bg-muted/80 transition-colors"
-                        >
-                          {Icon && <Icon size={16} />}
-                          {item}
-                        </li>
-                      );
-                    })}
-                  </ul>
+                  {/* Glowing border */}
+                  <GlowingEffect
+                    glow
+                    blur={8}
+                    spread={30}
+                    proximity={60}
+                    movementDuration={1.5}
+                    borderWidth={1}
+                    disabled={false} // set to false so glow works
+                    className="rounded-lg"
+                  />
+
+                  {/* Card content */}
+                  <div className="relative bg-card/60 backdrop-blur-md rounded-lg p-4 sm:p-5 shadow-sm border border-border hover:shadow-lg transition-all duration-200">
+                    <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
+                      {stack.title}
+                    </h3>
+                    <ul className="flex flex-wrap gap-2">
+                      {stack.items.map((item) => {
+                        const Icon = iconMap[item];
+                        return (
+                          <li
+                            key={item}
+                            className="flex items-center gap-2 px-3 py-1 text-xs sm:text-sm bg-muted rounded-full hover:bg-muted/80 transition-colors"
+                          >
+                            {Icon && <Icon size={16} />}
+                            {item}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
                 </motion.div>
               ))}
             </div>
