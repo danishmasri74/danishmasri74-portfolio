@@ -253,7 +253,7 @@ export default function Page() {
           <footer className="mt-auto flex flex-col gap-4 sm:gap-5 justify-center text-xs sm:text-sm text-muted-foreground px-2 text-center border-t border-border pt-6">
             <p className="max-w-xl mx-auto leading-relaxed">
               My little corner of the internet to stash cool stuff I’ve built.
-              Wanna talk code, games, or weird side projects?
+              Wanna talk code, games, or cool side projects?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center">
               <a
