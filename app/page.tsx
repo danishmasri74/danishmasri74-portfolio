@@ -133,7 +133,7 @@ const stacks = [
   },
   {
     title: "Frameworks & Libraries",
-    items: ["React", "Next.js", "TailwindCSS", "Vite", "Electron", "Tauri"],
+    items: ["React", "Next.js", "TailwindCSS", "Vite", "Electron", "Tauri", "Node.js", "Express.js"],
   },
   {
     title: "Databases & Storage",
