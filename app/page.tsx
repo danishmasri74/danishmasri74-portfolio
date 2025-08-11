@@ -24,7 +24,9 @@ import {
   SiSqlite,
   SiFirebase,
   SiGit,
+  SiExpress,
 } from "react-icons/si";
+import { FaNode } from "react-icons/fa";
 import { TbBrandCSharp } from "react-icons/tb";
 import { FaJava } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
@@ -93,6 +95,8 @@ const iconMap: Record<string, React.ElementType> = {
   Vite: SiVite,
   Electron: SiElectron,
   Tauri: SiTauri,
+  "Node.js": FaNode,
+  "Express.js": SiExpress,
   Supabase: SiSupabase,
   SQLite: SiSqlite,
   "better-sqlite3": SiPostgresql,
@@ -105,7 +109,6 @@ const iconMap: Record<string, React.ElementType> = {
   Unity: SiUnity,
   "Unreal Engine 4": SiUnrealengine,
   "Unreal Engine 5": SiUnrealengine,
-  "UE Blueprint": SiUnrealengine,
   "VS Code": VscVscode,
   "Visual Studio 2022": VscVscode,
   "Sublime Text": SiVscodium,
@@ -152,7 +155,6 @@ const stacks = [
       "Unity",
       "Unreal Engine 4",
       "Unreal Engine 5",
-      "UE Blueprint",
       "Blender",
     ],
   },
