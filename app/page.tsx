@@ -21,7 +21,13 @@ import {
   SiUnity,
   SiUnrealengine,
   SiVscodium,
+  SiSqlite,
+  SiFirebase,
+  SiGit,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+import { FaJava } from "react-icons/fa";
+import { SiMysql } from "react-icons/si";
 import { BiLogoBlender } from "react-icons/bi";
 import { VscVscode } from "react-icons/vsc";
 import {
@@ -73,11 +79,13 @@ const timelineData = [
 
 // ICON MAP
 const iconMap: Record<string, React.ElementType> = {
-  TS: FaJs,
-  JS: FaJs,
+  TypeScript: FaJs,
+  JavaScript: FaJs,
   HTML: FaHtml5,
   CSS: FaCss3Alt,
   Python: FaPython,
+  Java: FaJava,
+  "C#": TbBrandCSharp,
   "C++": FaCuttlefish,
   React: SiReact,
   "Next.js": SiNextdotjs,
@@ -86,23 +94,40 @@ const iconMap: Record<string, React.ElementType> = {
   Electron: SiElectron,
   Tauri: SiTauri,
   Supabase: SiSupabase,
+  SQLite: SiSqlite,
   "better-sqlite3": SiPostgresql,
+  Firebase: SiFirebase,
   MongoDB: SiMongodb,
+  MySQL: SiMysql,
   Postgres: SiPostgresql,
   Prisma: SiPrisma,
   "JSON/txt": SiVite,
   Unity: SiUnity,
   "Unreal Engine 4": SiUnrealengine,
   "Unreal Engine 5": SiUnrealengine,
+  "UE Blueprint": SiUnrealengine,
   "VS Code": VscVscode,
   "Visual Studio 2022": VscVscode,
   "Sublime Text": SiVscodium,
   Blender: BiLogoBlender,
+  Git: SiGit,
 };
 
 // STACKS
 const stacks = [
-  { title: "Languages", items: ["TS", "JS", "HTML", "CSS", "Python", "C++"] },
+  {
+    title: "Languages",
+    items: [
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Python",
+      "C#",
+      "C++",
+      "Java",
+    ],
+  },
   {
     title: "Frameworks & Libraries",
     items: ["React", "Next.js", "TailwindCSS", "Vite", "Electron", "Tauri"],
@@ -112,19 +137,28 @@ const stacks = [
     items: [
       "Supabase",
       "better-sqlite3",
+      "SQLite",
       "MongoDB",
+      "MySQL",
       "Postgres",
       "Prisma",
       "JSON/txt",
+      "Firebase",
     ],
   },
   {
     title: "Game Engines",
-    items: ["Unity", "Unreal Engine 4", "Unreal Engine 5", "Blender"],
+    items: [
+      "Unity",
+      "Unreal Engine 4",
+      "Unreal Engine 5",
+      "UE Blueprint",
+      "Blender",
+    ],
   },
   {
     title: "Tools & IDEs",
-    items: ["VS Code", "Visual Studio 2022", "Sublime Text"],
+    items: ["VS Code", "Visual Studio 2022", "Sublime Text", "Git"],
   },
 ];
 
@@ -179,7 +213,8 @@ export default function Page() {
               </p>
               <p>
                 In <strong>2020</strong>, I hopped into Unreal Engine 4, then
-                UE5 in 2023, chasing performance and visuals.
+                UE5 in 2023, chasing performance and visuals (and dabbling in
+                Blueprint scripting).
               </p>
               <p>
                 By 2024, I moved into desktop & web apps — building with
