@@ -38,12 +38,14 @@ const projects = [
   {
     title: "Clipboard Manager for Windows",
     href: "#",
+    image: "/images/clipboard-manager.png",
     desc: "Advanced clipboard history + search tool for power users. Built with Electron & better-sqlite3.",
     tech: ["Electron", "SQLite"],
   },
   {
     title: "Note Taking Website",
-    href: "#",
+    href: "https://inkline-ashy.vercel.app/",
+    image: "/images/note-taking.png",
     desc: "A lightweight rich-text editor with secure login and cloud sync.",
     tech: ["HTML", "CSS", "JavaScript"],
   },
@@ -211,6 +213,7 @@ export default function Page() {
                 title: p.title,
                 description: p.desc,
                 link: p.href,
+                image: p.image,
               }))}
             />
           </section>
